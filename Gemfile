@@ -44,5 +44,10 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'annotate'
+  gem 'pry'
 end
 
+gem "grape", "~> 1.7"
+gem "faraday", "~> 2.7"
