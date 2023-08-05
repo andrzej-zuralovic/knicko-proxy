@@ -107,6 +107,8 @@ GEM
       mustermann-grape (~> 1.0.0)
       rack (>= 1.3.0, < 3)
       rack-accept
+    grape-swagger (1.6.1)
+      grape (~> 1.3)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -151,6 +153,8 @@ GEM
     rack (2.2.8)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.6)
@@ -203,9 +207,11 @@ DEPENDENCIES
   debug
   faraday (~> 2.7)
   grape (~> 1.7)
+  grape-swagger
   pg (~> 1.1)
   pry
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.6)
   tzinfo-data
 

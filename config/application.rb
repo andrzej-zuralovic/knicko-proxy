@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module KnickoProxy
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults(7.0)
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -23,5 +23,8 @@ module KnickoProxy
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Allow https://loca.lt tunneling like ngrok but with free custom subdomain
+    config.hosts << 'knicko-proxy.loca.lt'
   end
 end
