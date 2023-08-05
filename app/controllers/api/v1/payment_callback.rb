@@ -21,7 +21,9 @@ module Api
           optional :fees, type: Array
         end
         post do
-          puts declared_params
+          if (order = Order.find_by(order_id: declared_params[:order_id], token: declared_params[:token]))
+            order.update(status: declared_params[:status], coingate_response: declared_params)
+          end
 
           status(:ok)
         end
