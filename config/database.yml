@@ -83,4 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: knicko_proxy_production
+  database: app
