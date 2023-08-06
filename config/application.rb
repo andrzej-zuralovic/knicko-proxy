@@ -25,6 +25,6 @@ module KnickoProxy
     config.api_only = true
 
     # Allow https://loca.lt tunneling like ngrok but with free custom subdomain
-    config.hosts << 'knicko-proxy.loca.lt'
+    config.hosts << 'knicko-proxy.zuralovic.lt'
   end
 end

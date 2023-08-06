@@ -5,6 +5,7 @@ Rails.application.configure do
 
   config.coingate_api_url = 'https://api-sandbox.coingate.com/v2'
   config.app_host = 'https://knicko-proxy.loca.lt'
+  config.hosts << 'knicko-proxy.loca.lt'
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
