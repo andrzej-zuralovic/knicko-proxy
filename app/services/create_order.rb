@@ -9,8 +9,14 @@ class CreateOrder
     order = Order.new(@order_params)
     order.order_id ||= SecureRandom.uuid
 
-    raise(StandardError, order.errors) unless order.save
+    raise(StandardError, format_error_messages(order.errors)) unless order.save
 
     order
+  end
+
+  private
+
+  def format_error_messages(errors)
+    errors.messages.transform_values { |messages| messages.join(', ') }
   end
 end

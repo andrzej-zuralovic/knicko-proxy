@@ -30,11 +30,13 @@ class CreateCoingateOrder
   private
 
   def handle_coingate_response(response)
+    body = JSON.parse(response.body)
+
     if response.success?
-      @order.update(status: response.body['status'], coingate_response: response.body)
+      @order.update(status: body['status'], coingate_response: body)
       @order.reload
     else
-      raise StandardError, response.body['errors']
+      raise StandardError, body['errors']
     end
   end
 end
