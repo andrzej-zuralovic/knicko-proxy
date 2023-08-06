@@ -1,24 +1,29 @@
-# README
+# Knicko Proxy App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### API Documentation:
+* API Endpoint: https://knicko-proxy.zuralovic.lt/api/v1/orders
+* https://knicko-proxy-docs.zuralovic.lt
+* [CoinGate Docs](https://developer.coingate.com/reference/cryptocurrency-payment-api)
 
-Things you may want to cover:
+### Credentials:
+* Bearer Token: `b85e810128b1e5718fe3c5ea1f18d3db4f8512e90155292149a29588c8a7b64f`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Fast demo
+### Create Order
+```bash
+curl -X 'POST' \
+  'https://knicko-proxy.zuralovic.lt/api/v1/orders' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer b85e810128b1e5718fe3c5ea1f18d3db4f8512e90155292149a29588c8a7b64f' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'price_amount=10' \
+  -F 'price_currency=EUR' \
+  -F 'receive_currency=EUR'
+```
+### Get Order
+```bash
+curl -X 'GET' \
+  'https://knicko-proxy.zuralovic.lt/api/v1/orders/1' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer b85e810128b1e5718fe3c5ea1f18d3db4f8512e90155292149a29588c8a7b64f'
+```
