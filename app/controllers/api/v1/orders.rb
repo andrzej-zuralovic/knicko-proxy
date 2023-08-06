@@ -4,6 +4,8 @@ module Api
       helpers Api::V1::Params::Orders
 
       resource :orders do
+        before { authenticate! }
+
         desc 'Create Order'
         params do
           use :create_order_params
