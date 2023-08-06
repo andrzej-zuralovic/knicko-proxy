@@ -7,6 +7,7 @@
 
 ### Credentials:
 * Bearer Token: `b85e810128b1e5718fe3c5ea1f18d3db4f8512e90155292149a29588c8a7b64f`
+* `export RAILS_MASTER_KEY="cc29331845de671df871a5e2b0bacadc`
 
 ## Fast demo
 ### Create Order
