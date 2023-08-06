@@ -25,7 +25,7 @@ module Api
         info: { title: 'Knicko-CoinGate API Proxy' },
         api_version: '1.0.0',
         doc_version: '1.0.0',
-        host: Rails.configuration.app_host,
+        host: URI.parse(Rails.configuration.app_host).host,
         hide_documentation_path: true,
         add_version: true,
       })

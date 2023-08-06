@@ -7,7 +7,8 @@
 
 Rails.application.config.middleware.insert_before(0, Rack::Cors) do
   allow do
-    origins "petstore.swagger.io"
+    # For testing purpose only for real production should be merchant host
+    origins "*"
 
     resource "*",
       headers: :any,

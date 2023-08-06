@@ -6,7 +6,15 @@ module Api
       resource :orders do
         before { authenticate! }
 
-        desc 'Create Order'
+        desc 'Create Order', {
+          headers: {
+            "Authorization" => {
+              description: "Bearer token auth in headers. Example: Bearer xxxxx",
+              required: true,
+            },
+          },
+          consumes: ['multipart/form-data'],
+        }
         params do
           use :create_order_params
         end
@@ -25,7 +33,14 @@ module Api
             error!('The requested order was not found.', :not_found) unless @order
           end
 
-          desc 'Get Order'
+          desc 'Get Order', {
+            headers: {
+              "Authorization" => {
+                description: "Bearer token auth in headers. Example: Bearer xxxxx",
+                required: true,
+              },
+            },
+          }
           get do
             @order
           end
